@@ -1,0 +1,59 @@
+3dfurniture       OK
+animated_water    BUILT-IN
+bags              OK
+beds              OK
+birthstones       OK - First version
+bobblocks         OK
+bookmarks         WON'T ADD
+bridges           OK
+building_blocks   OK
+cactusmod         404 ?
+campfire          OK
+carts             WON'T ADD
+charcoal          OK
+clean             WON'T ADD
+computer          OK
+cube              404
+desert_uses       OK
+doors             OK
+farming_plus      OK
+gates             OK
+gloopores         404 - Replaced by gloopblocks
+glow              OK
+home_gui          OK
+homedecor         OK
+hydro             OK
+industrial        OK
+inventory_plus    OK
+jumping           OK
+junglegrass       OK
+locked_sign       OK
+mesecons          OK
+moreblocks        OK
+morefaces         404
+moreflags         404
+moreores          OK
+papyrus_bed       OK
+pipeworks         OK
+places            404
+player2d          404
+protector         OK
+redsand           OK
+scaffolding       OK
+secret_passage    OK
+server            404
+sethome           WON'T ADD - commands will be added to home_gui mod
+signs             OK
+skins             OK
+snow              OK
+stairs            OK
+stairsplus        OK
+streets           OK
+teleporter        OK
+towntest          WON'T ADD
+trashcan          OK
+utility           404
+woolcraft         OK
+xdoors2           OK
+xfences           OK
+xpanes            OK
