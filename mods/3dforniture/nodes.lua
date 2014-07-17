@@ -1,23 +1,23 @@
 --[[
    3D Forniture
-   
+
    Copyright 2012 Tonyka
-   
+
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; either version 2 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
    MA 02110-1301, USA.
-   
+
    Contributors:
 
     InfinityProject
@@ -27,84 +27,10 @@
     cosarara97
 
         code.
-   
+
 ]]--
 
--- replacement
-
-	--Papyrus
-	minetest.register_node(":default:papyrus",
-		{description = "Papyrus",
-		drawtype = "nodebox",
-		tiles ={
-			"forniture_papyrus.png",
-			"forniture_papyrus.png",
-			"forniture_papyrus_s1.png",
-			"forniture_papyrus_s1.png",
-			"forniture_papyrus_s2.png",
-			"forniture_papyrus_s2.png",
-			},
-		inventory_image = "default_papyrus.png",
-		wield_image ="default_papyrus.png",
-		paramtype = "light",
-		is_ground_content = true,
-		walkable = false,
-		node_box = {
-			type = "fixed",
-			fixed = {
-				--papyrus 1
-				{-0.03-0.1,-0.5,-0.03-0.1, 0.03-0.1,0.5,0.03-0.1},
-				{-0.06-0.1,-0.02-0.1,-0.06-0.1, 0.06-0.1,0.02-0.1,0.06-0.1},
-				--papyrus 2
-				{-0.03-0.4,-0.5,-0.03-0.3, 0.03-0.4,0.5,0.03-0.3},
-				{-0.06-0.4,-0.02-0.2,-0.06-0.3, 0.06-0.4,0.02-0.2,0.06-0.3},
-				--papyrus 3
-				{-0.03+0.4,-0.5,-0.03-0.3,0.03+0.4,0.5,0.03-0.3},
-				{-0.06+0.4,-0.02+0.2,-0.06-0.3, 0.06+0.4,0.02+0.2,0.06-0.3},
-				--papyrus 4
-				{-0.03-0.4,-0.5,-0.03+0.4, 0.03-0.4,0.5,0.03+0.4},
-				{-0.06-0.4,0.02+0.4,-0.06+0.4, 0.06-0.4,0.02+0.4,0.06+0.4},
-				--papyrus 5
-				{-0.03-0.2,-0.5,-0.03+0.2, 0.03-0.2,0.5,0.03+0.2},
-				{-0.06-0.2,0.02-0.4,-0.06+0.2, 0.06-0.2,0.02-0.4,0.06+0.2},
-				--papyrus 6
-				{-0.03+0.1,-0.5,-0.03+0.2, 0.03+0.1,0.5,0.03+0.2},
-				{-0.06+0.1,0.02+0.3,-0.06+0.2, 0.06+0.1,0.02+0.3,0.06+0.2},
-				},
-			},
-		groups = {snappy = 3,flammable = 2},
-		sounds = default.node_sound_leaves_defaults(),
-	})
-
-	--Tree
-	minetest.register_node(":default:tree",
-		{description = "Tree",
-		paramtype = "light",
-		tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
-		is_ground_content = true,
-		drawtype = "nodebox",
-		node_box = {
-			type = "fixed",
-			fixed = {
-				{-0.35,-0.5,-0.4,0.35,0.5,0.4},
-				{-0.4,-0.5,-0.35, 0.4,0.5,0.35},
-				{-0.25,-0.5,-0.45,0.25,0.5,0.45},
-				{-0.45,-0.5,-0.25, 0.45,0.5,0.25},
-				{-0.15,-0.5,-0.5,0.15,0.5,0.5},
-				{-0.5,-0.5,-0.15, 0.5,0.5,0.15},
-			},
-		},
-		groups = {
-			tree = 1,
-			snappy = 1,
-			choppy = 2,
-			oddly_breakable_by_hand = 1,
-			flammable = 2
-		},
-		sounds = default.node_sound_wood_defaults(),
-	})
-
- --nodes  
+ --nodes
 
 	-- Deco Home
 
@@ -138,7 +64,7 @@
 				},
 			},
 			groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2}
-		})  
+		})
 
 		--Chair
 		minetest.register_node("3dforniture:chair",
@@ -415,9 +341,9 @@
 			--Toilet
 			minetest.register_node("3dforniture:toilet",
 				{ description = 'Toilet',
-				tiles = { 
-					"forniture_marble.png", "forniture_marble.png", 
-					"forniture_marble_s1.png", "forniture_marble_s1.png", 
+				tiles = {
+					"forniture_marble.png", "forniture_marble.png",
+					"forniture_marble_s1.png", "forniture_marble_s1.png",
 					"forniture_marble_s2.png", "forniture_marble_s2.png",
 				},
 				drawtype = "nodebox",
@@ -532,7 +458,7 @@
 						{-0.2,-0.45,0.4, -0.15,-0.3,0.45},
 						{-0.25,-0.4,0.4, -0.1,-0.35,0.45},
 
-						--taps 2 
+						--taps 2
 						{0.15,-0.4,0.45, 0.2,-0.35,0.5},
 						{0.15,-0.45,0.4, 0.2,-0.3,0.45},
 						{0.1,-0.4,0.4, 0.25,-0.35,0.45},
@@ -775,7 +701,7 @@
 				type = "fixed",
 				fixed = {-1/2, -1/2, 1/4, 1/2, 1/2, 1/2}, },
 				 groups = {cracky=1}
-		})  
+		})
 
 		--Torch Wakll
 		minetest.register_node("3dforniture:torch_wall",
