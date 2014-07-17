@@ -1,4 +1,3 @@
 default
 stairs
 craft_guide
-

@@ -378,3 +378,5 @@ minetest.register_abm({
 	end,
 })
 
+print("desert_uses 4 loaded.")
+
