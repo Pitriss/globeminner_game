@@ -1,0 +1,5 @@
+name = "purpleblackgreycat",
+author = "http://minecraft.novaskin.me/skin/5017276457680896/",
+description = "",
+comment = "",
+

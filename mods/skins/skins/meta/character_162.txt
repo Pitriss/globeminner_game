@@ -1,0 +1,5 @@
+name = "black_suit",
+author = "http://minecraft.novaskin.me/skin/6357874146017280/",
+description = "",
+comment = "",
+

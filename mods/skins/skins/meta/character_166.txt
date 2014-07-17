@@ -1,0 +1,5 @@
+name = "J. Doe",
+author = "http://minecraft.novaskin.me/skin/6754179712286720/",
+description = "",
+comment = "",
+

@@ -1,0 +1,5 @@
+name = "naked_girl",
+author = "http://minecraft.novaskin.me/skin/20389098/",
+description = "",
+comment = "",
+

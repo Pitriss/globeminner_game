@@ -1,0 +1,5 @@
+name = "police_woman",
+author = "http://minecraft.novaskin.me/skin/5760638575968256/",
+description = "",
+comment = "",
+

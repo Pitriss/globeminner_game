@@ -1,0 +1,5 @@
+name = "casual_purpleblack_clothes",
+author = "http://minecraft.novaskin.me/skin/5013317840011264/",
+description = "",
+comment = "",
+

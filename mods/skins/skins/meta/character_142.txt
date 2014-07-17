@@ -1,0 +1,5 @@
+name = "kingminecraft300_strong__naked",
+author = "http://minecraft.novaskin.me/skin/20122040/",
+description = "",
+comment = "",
+
