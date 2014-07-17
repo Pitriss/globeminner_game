@@ -42,7 +42,7 @@ redsand           OK
 scaffolding       OK
 secret_passage    OK
 server            404
-sethome           WON'T ADD - commands will be added to home_gui mod
+sethome           WON'T ADD - commands added to home_gui mod
 signs             OK
 skins             OK
 snow              OK
