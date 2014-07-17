@@ -35,7 +35,7 @@ end
 if useReply then
     minetest.register_chatcommand(replycmd, {
     params = "<text>",
-    description = "Reply the last peron that messaged you.",
+    description = "Reply the last person that messaged you.",
     privs = replyprivs,
     func = function(name, param)
         -- We need to get the target
