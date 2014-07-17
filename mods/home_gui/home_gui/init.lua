@@ -43,19 +43,38 @@ home_gui.set_home = function(player, pos)
 	local output = io.open(home_gui.filename..".home", "w")
 	for k, v in pairs(homepos) do
 		if v ~= nil then
-			output:write(math.floor(v.x).." "..math.floor(v.y).." "..math.floor(v.z).." "..k.."\n")
+			output:write(math.floor(v.x).." "..math.ceil(v.y).." "..math.floor(v.z).." "..k.."\n")
 		end
 	end
 	io.close(output)
+	minetest.chat_send_player(player:get_player_name(), "Your home position was set.")
 end
 
--- go_home 
+-- go_home
 home_gui.go_home = function(player)
 	local pos = homepos[player:get_player_name()]
 	if pos~=nil then
 		player:setpos(pos)
 	end
 end
+
+minetest.register_chatcommand("home", {
+	params = "",
+	description = "Teleport you to your home position",
+	func = function(name, param)
+		local player = get_player_obj(name)
+		home_gui.go_home(player)
+	end,
+})
+minetest.register_chatcommand("sethome", {
+	params = "",
+	description = "Set your home position",
+	func = function(name, param)
+		local player = get_player_obj(name)
+		home_gui.set_home(player, player:getpos())
+	end,
+})
+
 
 -- get_formspec
 home_gui.get_formspec = function(player)
@@ -67,7 +86,7 @@ home_gui.get_formspec = function(player)
 	if home ~= nil then
 		formspec = formspec
 			.."label[2,-0.2;Home set to:]"
-			.."label[2,0.2;"..math.floor(home.x)..","..math.floor(home.y)..","..math.floor(home.z).."]"
+			.."label[2,0.2;"..math.floor(home.x)..","..math.ceil(home.y)..","..math.floor(home.z).."]"
 	end
 	return formspec
 end
