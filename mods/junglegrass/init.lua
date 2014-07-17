@@ -2,7 +2,7 @@
 
 math.randomseed(os.time())
 
-local DEBUG = 1
+local DEBUG = 0
 
 local MAX_RATIO = 500
 local GROWING_DELAY = 50
@@ -38,7 +38,7 @@ spawn_on_surfaces = function(growdelay, grownames, surfaces)
 			interval = growdelay,
 			chance = 30,
 			action = function(pos, node, active_object_count, active_object_count_wider)
-				local p_top = { x = pos.x, y = pos.y + 1, z = pos.z }	
+				local p_top = { x = pos.x, y = pos.y + 1, z = pos.z }
 				local n_top = minetest.env:get_node(p_top)
 				local rnd = math.random(1, MAX_RATIO)
 
@@ -66,7 +66,7 @@ grow_on_surfaces = function(growdelay, grownames, surfaces)
 			interval = growdelay,
 			chance = 30,
 			action = function(pos, node, active_object_count, active_object_count_wider)
-				local p_top = { x = pos.x, y = pos.y + 1, z = pos.z }	
+				local p_top = { x = pos.x, y = pos.y + 1, z = pos.z }
 				local n_top = minetest.env:get_node(p_top)
 				local rnd = math.random(1, MAX_RATIO)
 				local nnode = grownames[math.random(1, #grownames)]
@@ -80,7 +80,7 @@ grow_on_surfaces = function(growdelay, grownames, surfaces)
 						  .. surface.name)
 						minetest.env:add_node(p_top, { name = "junglegrass:short" })
 					end
-	
+
 					if (surface.name == "default:desert_sand") then
 						if (n_top.name == "junglegrass:short") or (n_top.name == "junglegrass:medium") or (n_top.name == "default:junglegrass") then
 							dbg(nnode .. ' in desert turns to dry shrub at ('
