@@ -32,11 +32,11 @@ local function hoe_on_use(itemstack, user, pointed_thing, uses)
 	if pt.type ~= "node" then
 		return
 	end
-	
-	local under = minetest.get_node(pt.under)
+
+	local under = minetest.env:get_node(pt.under)
 	local p = {x=pt.under.x, y=pt.under.y+1, z=pt.under.z}
-	local above = minetest.get_node(p)
-	
+	local above = minetest.env:get_node(p)
+
 	-- return if any of the nodes is not registered
 	if not minetest.registered_nodes[under.name] then
 		return
@@ -44,19 +44,19 @@ local function hoe_on_use(itemstack, user, pointed_thing, uses)
 	if not minetest.registered_nodes[above.name] then
 		return
 	end
-	
+
 	-- check if the node above the pointed thing is air
 	if above.name ~= "air" then
 		return
 	end
-	
+
 	-- check if pointing at dirt
 	if minetest.get_item_group(under.name, "soil") ~= 1 then
 		return
 	end
-	
+
 	-- turn the node into soil, wear out item and play sound
-	minetest.set_node(pt.under, {name="farming:soil"})
+	minetest.env:set_node(pt.under, {name="farming:soil"})
 	minetest.sound_play("default_dig_crumbly", {
 		pos = pt.under,
 		gain = 0.5,
@@ -154,7 +154,7 @@ local function add_ore(modname, description, mineral_name, oredef)
 		})
 		minetest.register_alias(mineral_name .. "_ingot", ingot)
 	end
-	
+
 	if oredef.makes.chest then
 		minetest.register_craft( {
 			output = "default:chest_locked 1",
@@ -168,11 +168,11 @@ local function add_ore(modname, description, mineral_name, oredef)
 			recipe = get_recipe(ingot, "lockedchest")
 		})
 	end
-	
+
 	oredef.oredef.ore_type = "scatter"
 	oredef.oredef.ore = modname..":mineral_"..mineral_name
 	oredef.oredef.wherein = "default:stone"
-	
+
 	minetest.register_ore(oredef.oredef)
 
 	for toolname, tooldef in pairs(oredef.tools) do
@@ -193,7 +193,7 @@ local function add_ore(modname, description, mineral_name, oredef)
 		if toolname == "pick" then
 			tdef.description = S("%s Pickaxe"):format(S(description))
 		end
-		
+
 		if toolname == "axe" then
 			tdef.description = S("%s Axe"):format(S(description))
 		end
@@ -201,7 +201,7 @@ local function add_ore(modname, description, mineral_name, oredef)
 		if toolname == "shovel" then
 			tdef.description = S("%s Shovel"):format(S(description))
 		end
-		
+
 		if toolname == "hoe" then
 			tdef.description = S("%s Hoe"):format(S(description))
 			local uses = tooldef.uses
