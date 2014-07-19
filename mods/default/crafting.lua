@@ -30,10 +30,18 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:sign_wall',
+	output = 'default:sign_wall 4',
 	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
+		{'', 'default:stick', ''},
+	}
+})
+minetest.register_craft({
+	output = 'default:sign_wall 4',
+	recipe = {
+		{'default:junglewood', 'default:junglewood', 'default:junglewood'},
+		{'default:junglewood', 'default:junglewood', 'default:junglewood'},
 		{'', 'default:stick', ''},
 	}
 })
