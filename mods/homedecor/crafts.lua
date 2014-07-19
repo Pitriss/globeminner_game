@@ -46,7 +46,7 @@ minetest.register_craftitem("homedecor:plastic_sheeting", {
 minetest.register_craft({
         type = "cooking",
         output = "homedecor:plastic_sheeting",
-        recipe = "default:junglegrass 2",
+        recipe = "default:junglegrass",
 })
 
 minetest.register_craft({
@@ -185,7 +185,7 @@ minetest.register_craft({
 
 minetest.register_craft( {
         output = 'homedecor:skylight 9',
-        recipe = { 
+        recipe = {
 		{ 'default:glass', 'default:glass' },
 		{ 'default:glass', 'default:glass' },
         },
@@ -232,7 +232,7 @@ minetest.register_craft({
 
 minetest.register_craft( {
         output = 'homedecor:wood_table_small_square 2',
-        recipe = { 
+        recipe = {
 		{ 'homedecor:wood_table_small_round', 'homedecor:wood_table_small_round', 'homedecor:wood_table_small_round' },
         },
 })
@@ -377,7 +377,7 @@ minetest.register_craft( {
         },
 })
 
--- 
+--
 
 minetest.register_craft( {
         output = 'homedecor:pole_wrought_iron 2',
