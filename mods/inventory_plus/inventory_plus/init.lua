@@ -42,7 +42,7 @@ end
 -- get_formspec
 inventory_plus.get_formspec = function(player,page)
 	local formspec = "size[8,7.5]"
-	
+
 	-- player inventory
 	formspec = formspec .. "list[current_player;main;0,3.5;8,4;]"
 
@@ -53,15 +53,19 @@ inventory_plus.get_formspec = function(player,page)
 			.."list[current_player;craftpreview;7,1;1,1;]"
 		if minetest.setting_getbool("inventory_craft_small") then
 			formspec = formspec.."list[current_player;craft;3,0;2,2;]"
+			.."label[0,0.5;Trash:]"
+			.."list[detached:trash;main;0,1;1,1;]"
 			player:get_inventory():set_width("craft", 2)
 			player:get_inventory():set_size("craft", 2*2)
 		else
 			formspec = formspec.."list[current_player;craft;3,0;3,3;]"
+			.."label[0,0.5;Trash:]"
+			.."list[detached:trash;main;0,1;1,1;]"
 			player:get_inventory():set_width("craft", 3)
 			player:get_inventory():set_size("craft", 3*3)
 		end
 	end
-	
+
 	-- creative page
 	if page=="creative" then
 		return player:get_inventory_formspec()
@@ -71,7 +75,7 @@ inventory_plus.get_formspec = function(player,page)
 			.."label[5,1.5;Refill:]"
 			.."list[detached:refill;main;5,2;1,1;]"
 	end
-	
+
 	-- main page
 	if page=="main" then
 		-- buttons
@@ -85,18 +89,14 @@ inventory_plus.get_formspec = function(player,page)
 			end
 		end
 	end
-	
+
 	return formspec
 end
 
 -- trash slot
 inventory_plus.trash = minetest.create_detached_inventory("trash", {
 	allow_put = function(inv, listname, index, stack, player)
-		if minetest.setting_getbool("creative_mode") then
-			return stack:get_count()
-		else
-			return 0
-		end
+		return stack:get_count()
 	end,
 	on_put = function(inv, listname, index, stack, player)
 		inv:set_stack(listname, index, nil)
