@@ -6,15 +6,15 @@ bild_pfad_s2       = "default_wood.png"; --"forniture_wood_s2.png";
 
 leg_front_left     = {-0.5,-0.5,-0.5, -0.4,0.5,-0.4};
 leg_front_right    = { 0.4,-0.5,-0.5,  0.5,0.5,-0.4};
-leg_back_left      = {-0.5,-0.5, 0.4, -0.4,0.5, 0.5}; 
-leg_back_right     = { 0.4,-0.5, 0.4,  0.5,0.5, 0.5}; 
+leg_back_left      = {-0.5,-0.5, 0.4, -0.4,0.5, 0.5};
+leg_back_right     = { 0.4,-0.5, 0.4,  0.5,0.5, 0.5};
 
-bar_left           = {-0.5, 0.35,-0.4,-0.4, 0.4, 0.4}; 
+bar_left           = {-0.5, 0.35,-0.4,-0.4, 0.4, 0.4};
 bar_right          = { 0.4, 0.35,-0.4, 0.5, 0.4, 0.4};
 bar_back           = { 0.4, 0.35, 0.4,-0.5, 0.4, 0.5};
 bar_front          = { 0.5, 0.35,-0.5,-0.5, 0.4,-0.4};
 
-bar_left_long      = {-0.4, 0.35,-0.5,-0.5, 0.4, 0.5}; 
+bar_left_long      = {-0.4, 0.35,-0.5,-0.5, 0.4, 0.5};
 bar_right_long     = { 0.4, 0.35,-0.5, 0.5, 0.4, 0.5};
 
 groundplate_small  = {-0.4,-0.45,-0.5,  0.4,-0.4,0.5};
@@ -26,7 +26,7 @@ local WOOD  = "stairs:slab_wood";
 local BASIS = "bridges:bridge_basis";
 local RAIL  = "bridges:handrail_middle";
 -- people who do not have vines have to replace "vines:vines" with something they do have and which they think might fit
-local VINES = "vines:vines"; -- useful for ropes
+local VINES = "farming:string"; -- useful for ropes
 local ALT   = "default:leaves"; -- alternative for vines
 
 
@@ -50,12 +50,12 @@ local BRIDGE_PARTS = {
                            { "",    BASIS, ""    },
                            { "",    "",    ""    }
                          }, " 4"}, -- one groundplate yiels 4 handrails
- 
+
         -- bridges
  	{ "bridge_small", "small bridge", { -- TODO: slim legs?
-                                        leg_front_left, 
-                                        leg_front_right, 
-                                        leg_back_left, 
+                                        leg_front_left,
+                                        leg_front_right,
+                                        leg_back_left,
                                         leg_back_right,
                                         bar_right,
                                         bar_left,
@@ -73,9 +73,9 @@ local BRIDGE_PARTS = {
                            { "",    "",    ""    }
                          }, "" },
 	{ "bridge_corner", "corner of a bridge", {
-                                        leg_front_left, 
-                                        leg_front_right, 
-                                        leg_back_left, 
+                                        leg_front_left,
+                                        leg_front_right,
+                                        leg_back_left,
                                         leg_back_right,
                                         bar_right,
                                         bar_back,
@@ -85,9 +85,9 @@ local BRIDGE_PARTS = {
                            { STICK, "",    STICK }
                          }, "" },
 	{ "bridge_t",  "T junction of a bridge", {
-                                        leg_front_left, 
-                                        leg_front_right, 
-                                        leg_back_left, 
+                                        leg_front_left,
+                                        leg_front_right,
+                                        leg_back_left,
                                         leg_back_right,
                                         bar_back,
                                         groundplate_corner, },
@@ -96,9 +96,9 @@ local BRIDGE_PARTS = {
                            { STICK, "",    STICK }
                          }, "" },
         { "bridge_end", "end of a bridge", {
-                                        leg_front_left, 
-                                        leg_front_right, 
-                                        leg_back_left, 
+                                        leg_front_left,
+                                        leg_front_right,
+                                        leg_back_left,
                                         leg_back_right,
                                         bar_left,
                                         bar_right,
@@ -123,7 +123,7 @@ local BRIDGE_PARTS = {
 	{ "handrail_corner", "handrail for staircases, two sides closed", {
 					leg_front_left,
 					leg_front_right,
-					bar_front, 
+					bar_front,
 					bar_left },
                          { { STICK, "",    ""    },
                            { RAIL,  "",    ""    },
@@ -133,7 +133,7 @@ local BRIDGE_PARTS = {
 	{ "handrail_closed", "handrail for staircases, three sides closed", {
 					leg_front_left,
 					leg_front_right,
-					bar_front, 
+					bar_front,
 					bar_right,
 					bar_left },
                          { { STICK, RAIL,  STICK },
@@ -145,7 +145,7 @@ local BRIDGE_PARTS = {
 
 for i in ipairs( BRIDGE_PARTS ) do
 	minetest.register_node("bridges:"..BRIDGE_PARTS[i][1],
-			{ 
+			{
 			description = BRIDGE_PARTS[i][2],
 
 			tiles = {
@@ -185,7 +185,7 @@ end
                recipe = { { ALT,   ALT,   ALT   },
                           { ALT,   WOOD,  ALT   },
                           { ALT,   ALT,   ALT   },
-                         }, 
+                         },
         });
 
 -- a bridge with covers 3 nodes in size
@@ -298,16 +298,16 @@ minetest.register_node("bridges:bridge_auto", {
               z_dir = -1;
             end
           end
- 
+
 --        print ("x_dir: "..tostring( x_dir ).." z_dir: "..tostring( z_dir ));
 
           -- we have determined the direction in which the bridge may extend - now lets look how far it can go
           local i=1;
           -- how many parts of the bridge remain?
-          local rem_small  = math.floor(MAX_BRIDGE_LENGTH/3);  
+          local rem_small  = math.floor(MAX_BRIDGE_LENGTH/3);
           local rem_middle = MAX_BRIDGE_LENGTH-rem_small;
           -- extend max. MAX_BRIDGE_LENGTH nodes wide and only if the node needs a bridge (i.e. consists of air)
-          while( i < MAX_BRIDGE_LENGTH ) do 
+          while( i < MAX_BRIDGE_LENGTH ) do
 
              -- is there space for a bridge?
              p = {x=pos.x+(x_dir*i), y=pos.y, z=pos.z+(z_dir*i)};
@@ -330,7 +330,7 @@ minetest.register_node("bridges:bridge_auto", {
                 i = i+1;
              end
           end
- 
+
 
           -- do we have to give any leftover parts back?
           local meta = minetest.env:get_meta(pos);
