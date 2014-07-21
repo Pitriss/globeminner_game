@@ -113,9 +113,6 @@ for _, row in ipairs(dyelocal.dyes) do
 	local craftrecipe = {}
 	local craftcount = table.remove(dyelocal.crafts[name], 1)
 	craftrecipe = dyelocal.crafts[name]
-	print(tostring("name: "..name))
-
-
 	minetest.register_craft({
 		type = "shapeless",
 		output = item_name.." "..tostring(craftcount),
@@ -123,9 +120,6 @@ for _, row in ipairs(dyelocal.dyes) do
 	})
 
 end
-
-
-
 
 -- Hide dyelocal
 dyelocal = nil
