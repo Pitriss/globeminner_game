@@ -63,22 +63,40 @@ local dyelocal = {}
 
 -- This collection of colors is partly a historic thing, partly something else.
 dyelocal.dyes = {
-	{"white",      "White dye",     {dye=1, basecolor_white=1,   excolor_white=1,     unicolor_white=1}},
-	{"grey",       "Grey dye",      {dye=1, basecolor_grey=1,    excolor_grey=1,      unicolor_grey=1}},
-	{"dark_grey",  "Dark grey dye", {dye=1, basecolor_grey=1,    excolor_darkgrey=1,  unicolor_darkgrey=1}},
-	{"black",      "Black dye",     {dye=1, basecolor_black=1,   excolor_black=1,     unicolor_black=1}},
-	{"violet",     "Violet dye",    {dye=1, basecolor_magenta=1, excolor_violet=1,    unicolor_violet=1}},
-	{"blue",       "Blue dye",      {dye=1, basecolor_blue=1,    excolor_blue=1,      unicolor_blue=1}},
-	{"cyan",       "Cyan dye",      {dye=1, basecolor_cyan=1,    excolor_cyan=1,      unicolor_cyan=1}},
-	{"dark_green", "Dark green dye",{dye=1, basecolor_green=1,   excolor_green=1,     unicolor_dark_green=1}},
-	{"green",      "Green dye",     {dye=1, basecolor_green=1,   excolor_green=1,     unicolor_green=1}},
-	{"yellow",     "Yellow dye",    {dye=1, basecolor_yellow=1,  excolor_yellow=1,    unicolor_yellow=1}},
-	{"brown",      "Brown dye",     {dye=1, basecolor_yellow=1,  excolor_orange=1,    unicolor_dark_orange=1}},
-	{"orange",     "Orange dye",    {dye=1, basecolor_orange=1,  excolor_orange=1,    unicolor_orange=1}},
-	{"red",        "Red dye",       {dye=1, basecolor_red=1,     excolor_red=1,       unicolor_red=1}},
-	{"magenta",    "Magenta dye",   {dye=1, basecolor_magenta=1, excolor_red_violet=1,unicolor_red_violet=1}},
-	{"pink",       "Pink dye",      {dye=1, basecolor_red=1,     excolor_red=1,       unicolor_light_red=1}},
+	{"white",      "White dye",     {dye=1, basecolor_white=1,   excolor_white=1,     unicolor_white=1,	color_white=1}},
+	{"grey",       "Grey dye",      {dye=1, basecolor_grey=1,    excolor_grey=1,      unicolor_grey=1,	color_grey=1}},
+	{"black",      "Black dye",     {dye=1, basecolor_black=1,   excolor_black=1,     unicolor_black=1,	color_black=1}},
+	{"violet",     "Violet dye",    {dye=1, basecolor_magenta=1, excolor_violet=1,    unicolor_violet=1,	color_violet=1}},
+	{"blue",       "Blue dye",      {dye=1, basecolor_blue=1,    excolor_blue=1,      unicolor_blue=1,	color_blue=1}},
+	{"green",      "Green dye",     {dye=1, basecolor_green=1,   excolor_green=1,     unicolor_green=1,	color_green=1}},
+	{"yellow",     "Yellow dye",    {dye=1, basecolor_yellow=1,  excolor_yellow=1,    unicolor_yellow=1,	color_yellow=1}},
+	{"brown",      "Brown dye",     {dye=1, basecolor_yellow=1,  excolor_orange=1,    unicolor_dark_orange=1,	color_brown=1}},
+	{"orange",     "Orange dye",    {dye=1, basecolor_orange=1,  excolor_orange=1,    unicolor_orange=1,	color_orange=1}},
+	{"red",        "Red dye",       {dye=1, basecolor_red=1,     excolor_red=1,       unicolor_red=1,	color_red=1}},
+	{"cyan",       "Cyan dye",      {dye=1, basecolor_cyan=1,    excolor_cyan=1,      unicolor_cyan=1,	color_cyan=1}},
+	{"dark_green", "Dark green dye",{dye=1, basecolor_green=1,   excolor_green=1,     unicolor_dark_green=1,	color_dark_green=1}},
+	{"magenta",    "Magenta dye",   {dye=1, basecolor_magenta=1, excolor_red_violet=1,unicolor_red_violet=1,	color_magenta=1}},
+	{"dark_grey",  "Dark grey dye", {dye=1, basecolor_grey=1,    excolor_darkgrey=1,  unicolor_darkgrey=1,	color_dark_grey=1}},
+	{"pink",       "Pink dye",      {dye=1, basecolor_red=1,     excolor_red=1,       unicolor_light_red=1,	color_pink=1}},
 }
+dyelocal.crafts = {}
+
+dyelocal.crafts["white"]		=	{ "4", "flowers:dandelion_white"}
+dyelocal.crafts["grey"]			=	{ "2", "dye:white", "dye:black"}
+dyelocal.crafts["dark_grey"]	=	{ "1", "dye:grey"}
+dyelocal.crafts["black"]		=	{ "4", "default:coal_lump"}
+dyelocal.crafts["violet"]		=	{ "4", "flowers:viola"}
+dyelocal.crafts["blue"]			=	{ "4", "flowers:geranium"}
+dyelocal.crafts["cyan"]			=	{ "2", "dye:blue", "dye:green"}
+dyelocal.crafts["dark_green"]	=	{ "2", "dye:green", "dye:black"}
+dyelocal.crafts["green"]		=	{ "4", "default:cactus"}
+dyelocal.crafts["yellow"]		=	{ "4", "flowers:dandelion_yellow"}
+dyelocal.crafts["brown"]		=	{ "4", "default:dry_shrub"}
+dyelocal.crafts["orange"]		=	{ "4", "flowers:tulip"}
+dyelocal.crafts["red"]			=	{ "4", "flowers:rose"}
+dyelocal.crafts["magenta"]		=	{ "2", "dye:red", "dye:white"}
+dyelocal.crafts["pink"]			=	{ "1", "dye:magenta"}
+
 
 -- Define items
 for _, row in ipairs(dyelocal.dyes) do
@@ -92,46 +110,22 @@ for _, row in ipairs(dyelocal.dyes) do
 		description = description,
 		groups = groups
 	})
+	local craftrecipe = {}
+	local craftcount = table.remove(dyelocal.crafts[name], 1)
+	craftrecipe = dyelocal.crafts[name]
+	print(tostring("name: "..name))
+
+
 	minetest.register_craft({
 		type = "shapeless",
-		output = item_name.." 4",
-		recipe = {"group:flower,color_"..name},
+		output = item_name.." "..tostring(craftcount),
+		recipe = craftrecipe,
 	})
+
 end
 
--- Mix recipes
--- Just mix everything to everything somehow sanely
 
-dyelocal.mixbases = {"magenta", "red", "orange", "brown", "yellow", "green", "dark_green", "cyan", "blue", "violet", "black", "dark_grey", "grey", "white"}
 
-dyelocal.mixes = {
-	--       magenta,  red,    orange,   brown,    yellow,  green,  dark_green, cyan,    blue,   violet,   black,  dark_grey,  grey,   white
-	white = {"pink",  "pink", "orange", "orange", "yellow", "green", "green",  "grey",  "cyan", "violet",  "grey",  "grey",   "white", "white"},
-	grey  = {"pink",  "pink", "orange", "orange", "yellow", "green", "green",  "grey",  "cyan",  "pink",  "dark_grey","grey", "grey"},
-	dark_grey={"brown","brown", "brown", "brown", "brown","dark_green","dark_green","blue","blue","violet","black", "black"},
-	black = {"black", "black", "black",  "black", "black",  "black", "black",  "black", "black", "black",  "black"},
-	violet= {"magenta","magenta","red",  "brown", "red",    "cyan",  "brown",  "blue",  "violet","violet"},
-	blue  = {"violet", "magenta","brown","brown","dark_green","cyan","cyan",   "cyan",  "blue"},
-	cyan  = {"blue","brown","dark_green","dark_grey","green","cyan","dark_green","cyan"},
-	dark_green={"brown","brown","brown", "brown", "green",  "green", "dark_green"},
-	green = {"brown", "yellow","yellow","dark_green","green","green"},
-	yellow= {"red",  "orange", "yellow","orange", "yellow"},
-	brown = {"brown", "brown","orange", "brown"},
-	orange= {"red",  "orange","orange"},
-	red   = {"magenta","red"},
-	magenta={"magenta"},
-}
-
-for one,results in pairs(dyelocal.mixes) do
-	for i,result in ipairs(results) do
-		local another = dyelocal.mixbases[i]
-		minetest.register_craft({
-			type = "shapeless",
-			output = 'dye:'..result..' 2',
-			recipe = {'dye:'..one, 'dye:'..another},
-		})
-	end
-end
 
 -- Hide dyelocal
 dyelocal = nil
