@@ -244,7 +244,7 @@ end
 
 minetest.register_node("bridges:bridge_auto", {
 
-       description = "self building bruidge",
+       description = "self building bridge",
        tiles = { "default_chest_top.png" }, -- looks from all sides like the top of a chest
        drawtype = "cube",
        is_ground_content = true,
