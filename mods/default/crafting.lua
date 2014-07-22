@@ -17,7 +17,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:stick 4',
 	recipe = {
-		{'group:wood'},
+		{'default:wood'},
 	}
 })
 
@@ -57,7 +57,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:pick_wood',
 	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
 		{'', 'default:stick', ''},
 		{'', 'default:stick', ''},
 	}
@@ -66,7 +66,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:pick_stone',
 	recipe = {
-		{'group:stone', 'group:stone', 'group:stone'},
+		{'default:stone', 'default:stone', 'default:stone'},
 		{'', 'default:stick', ''},
 		{'', 'default:stick', ''},
 	}
@@ -111,7 +111,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:shovel_wood',
 	recipe = {
-		{'group:wood'},
+		{'default:wood'},
 		{'default:stick'},
 		{'default:stick'},
 	}
@@ -120,7 +120,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:shovel_stone',
 	recipe = {
-		{'group:stone'},
+		{'default:stone'},
 		{'default:stick'},
 		{'default:stick'},
 	}
@@ -165,8 +165,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:axe_wood',
 	recipe = {
-		{'group:wood', 'group:wood'},
-		{'group:wood', 'default:stick'},
+		{'default:wood', 'default:wood'},
+		{'default:wood', 'default:stick'},
 		{'', 'default:stick'},
 	}
 })
@@ -174,8 +174,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:axe_stone',
 	recipe = {
-		{'group:stone', 'group:stone'},
-		{'group:stone', 'default:stick'},
+		{'default:stone', 'default:stone'},
+		{'default:stone', 'default:stick'},
 		{'', 'default:stick'},
 	}
 })
@@ -219,8 +219,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:sword_wood',
 	recipe = {
-		{'group:wood'},
-		{'group:wood'},
+		{'default:wood'},
+		{'default:wood'},
 		{'default:stick'},
 	}
 })
@@ -228,8 +228,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:sword_stone',
 	recipe = {
-		{'group:stone'},
-		{'group:stone'},
+		{'default:stone'},
+		{'default:stone'},
 		{'default:stick'},
 	}
 })
@@ -282,27 +282,27 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:chest',
 	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', '', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
+		{'default:wood', '', 'default:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:chest_locked',
 	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
-		{'group:wood', 'default:steel_ingot', 'group:wood'},
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
+		{'default:wood', 'default:steel_ingot', 'default:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
 	}
 })
 
 minetest.register_craft({
 	output = 'default:furnace',
 	recipe = {
-		{'group:stone', 'group:stone', 'group:stone'},
-		{'group:stone', '', 'group:stone'},
-		{'group:stone', 'group:stone', 'group:stone'},
+		{'default:stone', 'default:stone', 'default:stone'},
+		{'default:stone', '', 'default:stone'},
+		{'default:stone', 'default:stone', 'default:stone'},
 	}
 })
 
@@ -411,8 +411,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:sandstone',
 	recipe = {
-		{'group:sand', 'group:sand'},
-		{'group:sand', 'group:sand'},
+		{'default:sand', 'default:sand'},
+		{'default:sand', 'default:sand'},
 	}
 })
 
@@ -473,9 +473,9 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'default:bookshelf',
 	recipe = {
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
 		{'default:book', 'default:book', 'default:book'},
-		{'group:wood', 'group:wood', 'group:wood'},
+		{'default:wood', 'default:wood', 'default:wood'},
 	}
 })
 
@@ -574,7 +574,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	output = "default:glass",
-	recipe = "group:sand",
+	recipe = "default:sand",
 })
 
 minetest.register_craft({
@@ -619,7 +619,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "group:tree",
+	recipe = "default:tree",
 	burntime = 30,
 })
 
@@ -631,7 +631,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "group:leaves",
+	recipe = "default:leaves",
 	burntime = 1,
 })
 
@@ -667,7 +667,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "group:wood",
+	recipe = "default:wood",
 	burntime = 7,
 })
 
