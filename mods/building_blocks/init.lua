@@ -95,8 +95,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'building_blocks:faggot 1',
 	recipe = {
-		{'craft "default:stick"', 'craft "default:stick"'},
-		{'craft "default:stick"', 'craft "default:stick"'},
+		{"default:stick", "default:stick"},
+		{"default:stick", "default:stick"},
 	}
 })
 minetest.register_craft({
