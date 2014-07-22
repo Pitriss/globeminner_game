@@ -1,3 +1,0 @@
-wool
-default
-craft_guide
