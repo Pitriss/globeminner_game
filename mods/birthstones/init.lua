@@ -189,13 +189,6 @@ minetest.register_node( "birthstones:aquamarineblock", {
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
-minetest.register_node( "birthstones:diamondblock", {
-	description = "Diamond Block",
-	tile_images = { "Diamond_block.png" },
-	is_ground_content = true,
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-})
 minetest.register_node( "birthstones:emeraldblock", {
 	description = "Emerald Block",
 	tile_images = { "Emerald_block.png" },
@@ -294,7 +287,6 @@ registerpickrecipe("peridot", 34, 4.0, 1.5, 1.0, 1)
 registerpickrecipe("opal", 32, 3.5, 1.6, 1.5, 2)
 registerpickrecipe("garnet", 35, 4.0, 1.5, 1.0, 1)
 registerpickrecipe("emerald", 40, 4.2, 1.6, 1.2, 2)
-registerpickrecipe("diamond", 50, 4.5, 1.8, 1.3, 3)
 registerpickrecipe("aquamarine", 25, 3.2, 1.40, 0.90, 1)
 registerpickrecipe("amethyst", 30, 3.2, 1.40, 0.90, 1)
 registerpickrecipe("alexandrite", 30, 3.2, 1.40, 0.90, 1)
@@ -314,7 +306,6 @@ end
 registerblockrecipe('birthstones:alexandrite', 'birthstones:alexandriteblock')
 registerblockrecipe('birthstones:amethyst', 'birthstones:amethystblock')
 registerblockrecipe('birthstones:aquamarine', 'birthstones:aquamarineblock')
-registerblockrecipe('birthstones:diamond', 'birthstones:diamondblock')
 registerblockrecipe('birthstones:emerald', 'birthstones:emeraldblock')
 registerblockrecipe('birthstones:garnet', 'birthstones:garnetblock')
 registerblockrecipe('birthstones:opal', 'birthstones:opalblock')
@@ -397,3 +388,47 @@ end)
 minetest.register_on_generated(function(minp, maxp, seed)
 generate_ore("birthstones:zirconore", "default:stone", minp, maxp, seed+21,   1/10/10/10,    4, -31000,  -70)
 end)
+
+minetest.register_craft({
+	output = 'default:pick_diamond',
+	recipe = {
+		{'birthstones:diamond', 'birthstones:diamond', 'birthstones:diamond'},
+		{'', 'default:stick', ''},
+		{'', 'default:stick', ''},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:axe_diamond',
+	recipe = {
+		{'birthstones:diamond', 'birthstones:diamond'},
+		{'birthstones:diamond', 'default:stick'},
+		{'', 'default:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:sword_diamond',
+	recipe = {
+		{'birthstones:diamond'},
+		{'birthstones:diamond'},
+		{'default:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:diamondblock',
+	recipe = {
+		{'birthstones:diamond', 'birthstones:diamond', 'birthstones:diamond'},
+		{'birthstones:diamond', 'birthstones:diamond', 'birthstones:diamond'},
+		{'birthstones:diamond', 'birthstones:diamond', 'birthstones:diamond'},
+	}
+})
+minetest.register_craft({
+	output = 'default:shovel_diamond',
+	recipe = {
+		{'birthstones:diamond'},
+		{'default:stick'},
+		{'default:stick'},
+	}
+})
