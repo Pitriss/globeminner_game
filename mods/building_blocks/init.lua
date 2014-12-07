@@ -14,7 +14,7 @@ minetest.register_node("building_blocks:Roofing", {
 minetest.register_craft({
 	output = 'building_blocks:terrycloth_towel 2',
 	recipe = {
-		{"flowers:cotton", "flowers:cotton", "flowers:cotton"},
+		{"farming:string", "farming:string", "farming:string"},
 	}
 })
 minetest.register_craft({
@@ -348,6 +348,7 @@ minetest.register_node("building_blocks:fakegrass", {
 	}),
 })
 minetest.register_craftitem("building_blocks:faggot", {
+	description = "Faggot",
 	image = "building_blocks_faggot.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })

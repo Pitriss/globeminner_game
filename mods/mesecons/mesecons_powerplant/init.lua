@@ -24,8 +24,8 @@ minetest.register_node("mesecons_powerplant:power_plant", {
 minetest.register_craft({
 	output = "mesecons_powerplant:power_plant 1",
 	recipe = {
-		{"group:mesecon_conductor_craftable"},
-		{"group:mesecon_conductor_craftable"},
+		{"mesecons:wire_00000000_off"},
+		{"mesecons:wire_00000000_off"},
 		{"default:sapling"},
 	}
 })

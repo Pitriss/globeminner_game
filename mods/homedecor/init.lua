@@ -4,7 +4,7 @@
 -- Mostly my own code, with bits and pieces lifted from Minetest's default
 -- lua files, from ironzorg's flowers mod
 --
--- See also, foldingdoors.lua (borrowed heavily from Minetest's default 
+-- See also, foldingdoors.lua (borrowed heavily from Minetest's default
 -- doors mod)
 --
 -- This mod requires the presence of the "unifieddyes" mod, which also
@@ -260,7 +260,7 @@ minetest.register_node("homedecor:table_legs_brass", {
 })
 
 minetest.register_node("homedecor:table_legs_wrought_iron", {
-        description = "Brass Table Legs",
+        description = "Wrought Iron Table Legs",
         drawtype = "plantlike",
         tiles = {"homedecor_table_legs_wrought_iron.png"},
         inventory_image = "homedecor_table_legs_wrought_iron.png",
@@ -883,7 +883,7 @@ minetest.register_node("homedecor:pole_brass", {
 		fixed = cylbox,
 	}
 })
-	
+
 minetest.register_node("homedecor:pole_wrought_iron", {
         description = "Wrought Iron Pole",
         drawtype = "nodebox",

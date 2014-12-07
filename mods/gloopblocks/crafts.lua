@@ -188,14 +188,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:wood",
-	recipe = {
-		 {"default:stick", "default:stick"},
-		 {"default:stick", "default:stick"},
-	}
-})
-
-minetest.register_craft({
 	output = "gloopblocks:pavement 5",
 	recipe = {
 		{"gloopblocks:basalt",    "gloopblocks:wet_cement","gloopblocks:basalt"},

@@ -37,7 +37,7 @@ end
 minetest.register_craft({
 	output = "mesecons_torch:mesecon_torch_on 4",
 	recipe = {
-	{"group:mesecon_conductor_craftable"},
+	{"mesecons:wire_00000000_off"},
 	{"default:stick"},}
 })
 

@@ -351,13 +351,13 @@ minetest.register_node("industrial:rrsign", {
 })
 -- end railroad crossing sign
 
--- NOTE: To have high voltage sign, uncomment the following and add jeija to depends.txt 
+-- NOTE: To have high voltage sign, uncomment the following and add jeija to depends.txt
 --       and have jeija installed and working properly
 ---- start high voltage sign
 minetest.register_craft({
 	output = 'industrial:highvoltagesign',
 	recipe = {
-		{'jeija:mesecon', 'default:sign_wall'},
+		{'mesecons:wire_00000000_off', 'default:sign_wall'},
 	}
 })
 

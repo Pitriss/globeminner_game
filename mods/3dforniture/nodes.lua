@@ -747,5 +747,5 @@
 				type = "fixed",
 				fixed = {-0.15, -0.45, 0.15, 0.15,0.35, 0.5},
 			},
-			groups = {cracky=2}
+			groups = {cracky=2, hot=1}
 		})

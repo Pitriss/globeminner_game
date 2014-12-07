@@ -143,9 +143,9 @@ end
 minetest.register_craft({
 	output = 'craft "mesecons_microcontroller:microcontroller0000" 2',
 	recipe = {
-		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'group:mesecon_conductor_craftable'},
-		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'group:mesecon_conductor_craftable'},
-		{'group:mesecon_conductor_craftable', 'group:mesecon_conductor_craftable', ''},
+		{'mesecons:wire_00000000_off', 'mesecons_materials:silicon', 'mesecons_materials:silicon'},
+		{'mesecons:wire_00000000_off', 'mesecons_materials:silicon', 'mesecons_materials:silicon'},
+		{'', 'mesecons:wire_00000000_off', 'mesecons:wire_00000000_off'},
 	}
 })
 
@@ -257,7 +257,7 @@ function parse_get_command(code, starti)
 		if s == "(" then
 			return string.sub(code, starti, i-1), i + 1 -- i: ( i+1 after (
 		end
-		if s == ";" and starti == i then 
+		if s == ";" and starti == i then
 			starti = starti + 1
 			i = starti
 		elseif s == ">" then
@@ -405,7 +405,7 @@ function yc_command_sbi(params, eeprom, L, Lv)
 	--is an eeprom address
 	new_eeprom = "";
 	for i=1, #eeprom do
-		if tonumber(params[1])==i then 
+		if tonumber(params[1])==i then
 			new_eeprom = new_eeprom..status
 		else
 			new_eeprom = new_eeprom..eeprom:sub(i, i)
@@ -471,7 +471,7 @@ function yc_command_if_getcondition(code, starti)
 	local brackets = 1 --1 Bracket to close
 	while s ~= "" do
 		s = string.sub(code, i, i)
-		
+
 		if s == ")" then
 			brackets = brackets - 1
 		end
@@ -534,7 +534,7 @@ function yc_command_parsecondition(cond, L, eeprom)
 		i = i + 1
 	end
 
-	local i = 2 
+	local i = 2
 	local l = string.len(cond)
 	while i<=l do
 		local s = cond:sub(i,i)
@@ -608,12 +608,12 @@ function yc_action_setports(pos, L, Lv)
 		if L.b == true then mesecon:receptor_on(pos, rules)
 		else mesecon:receptor_off(pos, rules) end
 	end
-	if Lv.c ~= L.c then 
+	if Lv.c ~= L.c then
 		rules = mesecon:get_rules(name.."0100")
 		if L.c == true then mesecon:receptor_on(pos, rules)
 		else mesecon:receptor_off(pos, rules) end
 	end
-	if Lv.d ~= L.d then 
+	if Lv.d ~= L.d then
 		rules = mesecon:get_rules(name.."1000")
 		if L.d == true then mesecon:receptor_on(pos, rules)
 		else mesecon:receptor_off(pos, rules) end
@@ -685,10 +685,10 @@ function yc_overheat(meta)
 	if MESECONS_GLOBALSTEP then return false end
 	h = meta:get_int("heat")
 	if h == nil then return true end -- if nil the overheat
-	if h>60 then 
+	if h>60 then
 		return true
-	else 
-		return false 
+	else
+		return false
 	end
 end
 
