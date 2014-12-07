@@ -348,6 +348,7 @@ minetest.register_node("building_blocks:fakegrass", {
 	}),
 })
 minetest.register_craftitem("building_blocks:faggot", {
+	description = "Faggot",
 	image = "building_blocks_faggot.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
