@@ -46,18 +46,21 @@ end
 
 -- get_craft_guide_formspec
 craft_guide.get_craft_guide_formspec = function(meta, search, page, alternate)
-	if search == nil then 
+	if search == nil then
 		search = meta:get_string("search")
 	end
-	if page == nil then 
-		page = craft_guide.get_current_page(meta) 
+	if page == nil then
+		page = craft_guide.get_current_page(meta)
 	end
-	if alternate == nil then 
-		alternate = craft_guide.get_current_alternate(meta) 
+	if alternate == nil then
+		alternate = craft_guide.get_current_alternate(meta)
 	end
 	local inv = meta:get_inventory()
 	local size = inv:get_size("main")
 	local start = (page-1) * (5*14) + 1
+	if start < 1 then
+		start = 1
+	end
 	local pages = math.floor((size-1) / (5*14) + 1)
 	local alternates = 0
 	local stack = inv:get_stack("output",1)
@@ -137,7 +140,7 @@ craft_guide.on_receive_fields = function(pos, formname, fields, player)
 	local pages = math.floor((size-1) / (5*14) + 1)
 
 	local search
-	
+
 	-- search
 	search = fields.craft_guide_search_box
 	meta:set_string("search", search)
@@ -207,7 +210,7 @@ craft_guide.update_recipe = function(meta, player, stack, alternate)
 	alternate = tonumber(alternate) or 1
 	craft_guide.log(player:get_player_name().." requests recipe "..alternate.." for "..stack:get_name())
 	local crafts = craft_guide.crafts[stack:get_name()]
-	
+
 	if crafts == nil then
 		minetest.chat_send_player(player:get_player_name(), "no recipe available for "..stack:get_name())
 		meta:set_string("formspec",craft_guide.get_craft_guide_formspec(meta))
@@ -217,11 +220,11 @@ craft_guide.update_recipe = function(meta, player, stack, alternate)
 		alternate = 1
 	end
 	local craft = crafts[alternate]
-	
+
 	-- show me the unknown items
 	craft_guide.log(dump(craft))
 	--minetest.chat_send_player(player:get_player_name(), "recipe for "..stack:get_name()..": "..dump(craft))
-	
+
 	local itemstack = ItemStack(craft.output)
 	inv:set_stack("output", 1, itemstack)
 
