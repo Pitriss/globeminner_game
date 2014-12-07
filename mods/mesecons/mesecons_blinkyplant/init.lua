@@ -43,8 +43,8 @@ minetest.register_node("mesecons_blinkyplant:blinky_plant_on", {
 minetest.register_craft({
 	output = "mesecons_blinkyplant:blinky_plant_off 1",
 	recipe = {
-	{"","group:mesecon_conductor_craftable",""},
-	{"","group:mesecon_conductor_craftable",""},
+	{"","mesecons:wire_00000000_off",""},
+	{"","mesecons:wire_00000000_off",""},
 	{"default:sapling","default:sapling","default:sapling"},
 	}
 })
@@ -56,7 +56,7 @@ minetest.register_abm(
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		--minetest.env:remove_node(pos)
 		minetest.env:add_node(pos, {name="mesecons_blinkyplant:blinky_plant_on"})
-		nodeupdate(pos)	
+		nodeupdate(pos)
 		mesecon:receptor_on(pos)
 	end,
 })
@@ -68,7 +68,7 @@ minetest.register_abm({
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		--minetest.env:remove_node(pos)
 		minetest.env:add_node(pos, {name="mesecons_blinkyplant:blinky_plant_off"})
-		nodeupdate(pos)	
+		nodeupdate(pos)
 		mesecon:receptor_off(pos)
 	end,
 })

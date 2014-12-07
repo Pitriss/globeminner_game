@@ -18,7 +18,7 @@ minetest.register_craft({
 	output = 'mesecons_random:removestone 4',
 	recipe = {
 		{"", "default:cobble", ""},
-		{"default:cobble", "group:mesecon_conductor_craftable", "default:cobble"},
+		{"default:cobble", "mesecons:wire_00000000_off", "default:cobble"},
 		{"", "default:cobble", ""},
 	}
 })
@@ -79,7 +79,7 @@ minetest.register_craft({
 	output = 'mesecons_random:ghoststone 4',
 	recipe = {
 		{"default:steel_ingot", "default:cobble", "default:steel_ingot"},
-		{"default:cobble", "group:mesecon_conductor_craftable", "default:cobble"},
+		{"default:cobble", "mesecons:wire_00000000_off", "default:cobble"},
 		{"default:steel_ingot", "default:cobble", "default:steel_ingot"},
 	}
 })

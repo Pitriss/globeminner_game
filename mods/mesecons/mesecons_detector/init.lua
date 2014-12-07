@@ -78,7 +78,7 @@ minetest.register_craft({
 	recipe = {
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
 		{"default:steel_ingot", "mesecons_luacontroller:luacontroller0000", "default:steel_ingot"},
-		{"default:steel_ingot", "group:mesecon_conductor_craftable", "default:steel_ingot"},
+		{"default:steel_ingot", "mesecons:wire_00000000_off", "default:steel_ingot"},
 	}
 })
 

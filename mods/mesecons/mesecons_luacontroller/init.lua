@@ -110,10 +110,10 @@ end
 local overheat = function (meta) -- determine if too hot
 	h = meta:get_int("heat")
 	if h == nil then return true end -- if nil then overheat
-	if h > 40 then 
+	if h > 40 then
 		return true
-	else 
-		return false 
+	else
+		return false
 	end
 end
 
@@ -554,9 +554,9 @@ minetest.register_node(BASENAME .. "_burnt", {
 minetest.register_craft({
 	output = BASENAME.."0000 2",
 	recipe = {
-		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'group:mesecon_conductor_craftable'},
-		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'group:mesecon_conductor_craftable'},
-		{'group:mesecon_conductor_craftable', 'group:mesecon_conductor_craftable', ''},
+		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'mesecons:wire_00000000_off'},
+		{'mesecons_materials:silicon', 'mesecons_materials:silicon', 'mesecons:wire_00000000_off'},
+		{'mesecons:wire_00000000_off', 'mesecons:wire_00000000_off', ''},
 	}
 })
 

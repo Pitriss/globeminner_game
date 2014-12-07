@@ -45,7 +45,7 @@ end
 
 for i = 1, 4 do
 local groups = {}
-if i == 1 then 
+if i == 1 then
 	groups = {bendy=2,snappy=1,dig_immediate=2}
 else
 	groups = {bendy=2,snappy=1,dig_immediate=2, not_in_creative_inventory=1}
@@ -183,7 +183,7 @@ end
 minetest.register_craft({
 	output = "mesecons_delayer:delayer_off_1",
 	recipe = {
-		{"mesecons_torch:mesecon_torch_on", "group:mesecon_conductor_craftable", "mesecons_torch:mesecon_torch_on"},
+		{"mesecons_torch:mesecon_torch_on", "mesecons:wire_00000000_off", "mesecons_torch:mesecon_torch_on"},
 		{"default:cobble","default:cobble", "default:cobble"},
 	}
 })

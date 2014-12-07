@@ -88,7 +88,7 @@ minetest.register_node("mesecons_walllever:wall_lever_on", {
 minetest.register_craft({
 	output = "mesecons_walllever:wall_lever_off 2",
 	recipe = {
-	    {"group:mesecon_conductor_craftable"},
+	    {"mesecons:wire_00000000_off"},
 		{"default:stone"},
 		{"default:stick"},
 	}
