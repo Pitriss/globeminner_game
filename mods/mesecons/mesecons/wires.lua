@@ -26,7 +26,7 @@ for xpy=0, 1 do
 for zpy=0, 1 do
 for xmy=0, 1 do
 for zmy=0, 1 do
-	if (xpy == 1 and xp == 0) or (zpy == 1 and zp == 0) 
+	if (xpy == 1 and xp == 0) or (zpy == 1 and zp == 0)
 	or (xmy == 1 and xm == 0) or (zmy == 1 and zm == 0) then break end
 
 	local groups
@@ -233,7 +233,7 @@ function mesecon:update_autoconnect(pos, secondcall, replace_old)
 	local nodeid = 	tostring(xp )..tostring(zp )..tostring(xm )..tostring(zm )..
 			tostring(xpy)..tostring(zpy)..tostring(xmy)..tostring(zmy)
 
-	
+
 	if string.find(nodename, "_off") ~= nil then
 		minetest.env:set_node(pos, {name = "mesecons:wire_"..nodeid.."_off"})
 	else
@@ -259,13 +259,6 @@ else
 
 	minetest.register_craft({
 		type = "cooking",
-		output = "mesecons:wire_00000000_off 18",
-		recipe = "default:mese_crystal",
-		cooktime = 15,
-	})
-
-	minetest.register_craft({
-		type = "cooking",
 		output = "mesecons:wire_00000000_off 162",
 		recipe = "default:mese",
 		cooktime = 30,
@@ -277,4 +270,5 @@ minetest.register_craft({
 	type = "cooking",
 	output = "mesecons:wire_00000000_off 16",
 	recipe = "default:mese_crystal",
+	cooktime = 15
 })
