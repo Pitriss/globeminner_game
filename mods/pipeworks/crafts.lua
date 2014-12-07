@@ -59,7 +59,7 @@ minetest.register_craft( {
         output = "pipeworks:grating 2",
         recipe = {
                 { "default:steel_ingot", "", "default:steel_ingot" },
-                { "", "default:steel_ingot", "" },
+                { "", "default:glass", "" },
                 { "default:steel_ingot", "", "default:steel_ingot" }
         },
 })
@@ -233,7 +233,7 @@ if io.open(minetest.get_modpath("pipeworks").."/../technic/init.lua", "r") == ni
 		        { "homedecor:plastic_sheeting", "homedecor:plastic_sheeting", "homedecor:plastic_sheeting" }
 		},
 	})
-	
+
 	minetest.register_craft( {
 		output = "pipeworks:sand_tube_000000 2",
 		recipe = {
