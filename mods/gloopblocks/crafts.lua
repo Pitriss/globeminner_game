@@ -59,7 +59,8 @@ minetest.register_craft({
 	type = "shapeless",
 	output = "gloopblocks:evil_stick",
 	recipe = {
-		"gloopores:kalite_lump",
+                "default:gold_ingot",
+		"default:gold_ingot",
 		"default:coal_lump",
 		"default:stick"
 	}

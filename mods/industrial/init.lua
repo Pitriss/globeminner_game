@@ -18,10 +18,11 @@
 
 -- white brick (because I missed it)
 minetest.register_craft({
-	output = 'node "industrial:white_brick" 10',
+	output = 'node "industrial:white_brick" 2',
 	recipe = {
 		{'node "default:stone"', 'node "default:stone"'},
 		{'node "default:stone"', 'node "default:stone"'},
+                {'node "default:stone"', 'node "default:stone"'},
 	}
 })
 
